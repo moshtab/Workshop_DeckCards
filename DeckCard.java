@@ -12,19 +12,22 @@ public class DeckCard {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the DeckCards computation program");
-		showAllCards();
+		selectCard();
+	}
+	
+	private static void selectCard() {
+		System.out.println("Displaying the selected card");
+		Random r = new Random();
+		int suit = r.nextInt(4);
+		int rank = r.nextInt(13);
+		if(deck[suit][rank]==null) {
+			selectCard();
+		}
+		else {
+			System.out.println(deck[suit][rank]);
+		}
+		
 		
 	}
-	private static void showAllCards() {
-		System.out.println("Displaying total cards");
-		for(int i=0;i<4;i++) {
-			for(int j=0;j<13;j++) {
-				System.out.println(" "+deck[i][j]);
-			}
-			System.out.println();
-		}
-	}
-
-
 
 }
