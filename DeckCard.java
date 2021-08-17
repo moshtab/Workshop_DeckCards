@@ -12,6 +12,12 @@ public class DeckCard {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the DeckCards computation program");
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the number of players");
+		int maxPlayers = s.nextInt();
+		s.close();
+		
 		selectCard();
 	}
 	
