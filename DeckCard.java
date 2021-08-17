@@ -1,6 +1,7 @@
 package workshop;
 
-import java.util.Random;
+
+import java.util.Scanner;
 
 public class DeckCard {
 	static String[] Clubs = { "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9","C10" , "CJack", "CQueen", "CKing", "CAce" };
@@ -13,42 +14,24 @@ public class DeckCard {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the DeckCards computation program");
 		
-		distribute();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the number of players");
+		int maxPlayers = s.nextInt();
+		s.close();
+		System.out.println("max players are : "+maxPlayers);
 		showAllCards();
 		
 	}
-	private static void distribute() {
-		for(int i=1;i<5;i++) {
-			System.out.println("For Player"+i);
-			for(int j=1;j<10;j++) {
-				selectCard();
-			}
-			System.out.println();
-		}
-		
-	}
 	
-	private static void selectCard() {
-		Random r = new Random();
-		int suit = r.nextInt(4);
-		int rank = r.nextInt(13);
-		if(deck[suit][rank]==null) {
-			selectCard();
-		}
-		else {
-			System.out.println(deck[suit][rank]);
-		}
-		
-	}
-	private static void showAllCards() {
-		System.out.println("Displaying total cards");
-		for(int i=0;i<deck.length;i++) {
-			for(int j=0;j<13;j++) {
-				System.out.println(" "+deck[i][j]);
+        private static void showAllCards() {
+			System.out.println("Displaying total cards");
+			for(int i=0;i<deck.length;i++) {
+				for(int j=0;j<13;j++) {
+					System.out.println(" "+deck[i][j]);
+				}
+				System.out.println();
 			}
-			System.out.println();
 		}
-	}
 	
 	
 	
