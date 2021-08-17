@@ -13,12 +13,17 @@ public class DeckCard {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the DeckCards computation program");
 		
-		distribute();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the number of players");
+		int maxPlayers = s.nextInt();
+		s.close();
+		
+		distribute(maxPlayers);
 		showAllCards();
 		
 	}
-	private static void distribute() {
-		for(int i=1;i<5;i++) {
+	private static void distribute(int maxPlayers) {
+		for(int i=0;i<maxPlayers;i++) {
 			System.out.println("For Player"+i);
 			for(int j=1;j<10;j++) {
 				selectCard();
